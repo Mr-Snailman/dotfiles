@@ -5,8 +5,11 @@ sudo dnf update -y
 sudo dnf install -y dnf-plugins-core
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install -y git maven java nodejs vim docker-ce docker-compose xorg-x11-drv-nvidia akmod-nvidia
+sudo dnf install -y htop git maven java nodejs vim docker-ce docker-compose xorg-x11-drv-nvidia akmod-nvidia
 sudo dnf update -y
+
+echo 'Installing Yarn'
+sudo npm install -g yarn
 
 echo 'Setup Docker Group'
 sudo groupadd docker
