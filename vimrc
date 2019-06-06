@@ -24,4 +24,6 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+set viminfo='20,<1000,s1000
+set background=dark
 
