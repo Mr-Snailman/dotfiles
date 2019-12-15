@@ -6,7 +6,8 @@ sudo dnf install -y dnf-plugins-core fedora-workstation-repositories
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf config-manager --set-enabled google-chrome
 sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install -y htop git maven java nodejs vim docker-ce docker-compose xorg-x11-drv-nvidia akmod-nvidia chromium google-chrome-stable snapd
+sudo dnf install -y htop git maven java nodejs vim docker-ce docker-compose chromium google-chrome-stable snapd tmux
+#sudo dnf install -y xorg-x11-drv-nvidia akmod-nvidia
 sudo dnf groupupdate -y core multimedia sound-and-video
 sudo dnf update -y
 
@@ -30,3 +31,8 @@ cp vimrc $HOME/.vimrc
 mkdir $HOME/.vim/bundle -p
 git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+
+echo 'Configuring env'
+cp tmux.conf $HOME/.tmux.conf
+cp bashrc $HOME/.bashrc
+cp gitconfig $HOME/.gitconfig
